@@ -165,7 +165,9 @@ class LeaderboardScreenState extends State<LeaderboardScreen> {
                 color: AppColors.backgroundLight,
                 child: ListView.separated(
                   padding: const EdgeInsets.all(16),
-                  itemCount: _entries.length > 3 ? _entries.length - 3 : 0,
+                  itemCount: _entries.length > 3
+                      ? (_entries.length - 3).clamp(0, 7)
+                      : 0,
                   separatorBuilder: (_, __) => const SizedBox(height: 12),
                   itemBuilder: (context, i) {
                     final entry = _entries[i + 3];

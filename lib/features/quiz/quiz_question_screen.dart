@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import '../../models/quiz_question.dart';
@@ -23,10 +24,42 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
   bool _isLoading = true;
   final Stopwatch _stopwatch = Stopwatch();
 
+  // Countdown timer
+  static const int _maxSeconds = 30;
+  int _secondsLeft = _maxSeconds;
+  Timer? _timer;
+
   @override
   void initState() {
     super.initState();
     _loadQuestions();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  void _startTimer() {
+    _timer?.cancel();
+    setState(() => _secondsLeft = _maxSeconds);
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (!mounted) {
+        timer.cancel();
+        return;
+      }
+      setState(() => _secondsLeft--);
+      if (_secondsLeft <= 0) {
+        timer.cancel();
+        _autoNext();
+      }
+    });
+  }
+
+  void _autoNext() {
+    // Time ran out without selecting — count as wrong, move on
+    _nextQuestion();
   }
 
   Future<void> _loadQuestions() async {
@@ -43,6 +76,7 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
           _isLoading = false;
         });
         _stopwatch.start();
+        _startTimer();
       }
     } catch (_) {
       if (mounted) setState(() => _isLoading = false);
@@ -51,6 +85,7 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
 
   void _selectOption(int index) {
     if (_selectedOption != -1) return;
+    _timer?.cancel();
     setState(() {
       _selectedOption = index;
       final correct = _questions[_currentIndex].correctAnswer;
@@ -67,6 +102,7 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
         _currentIndex++;
         _selectedOption = -1;
       });
+      _startTimer();
     } else {
       _stopwatch.stop();
       final userId = AuthService.currentUser?.id;
@@ -199,14 +235,22 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
                       ),
                       child: Row(
                         children: [
-                          Icon(Icons.timer, color: AppColors.primary, size: 20),
+                          Icon(
+                            Icons.timer,
+                            color: _secondsLeft <= 5
+                                ? Colors.red
+                                : AppColors.primary,
+                            size: 20,
+                          ),
                           const SizedBox(width: 8),
                           Text(
-                            '01:30',
+                            '00:${_secondsLeft.toString().padLeft(2, '0')}',
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w700,
-                              color: AppColors.primary,
+                              color: _secondsLeft <= 5
+                                  ? Colors.red
+                                  : AppColors.primary,
                             ),
                           ),
                         ],
