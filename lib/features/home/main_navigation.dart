@@ -9,6 +9,11 @@ import '../leaderboard/leaderboard_screen.dart';
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
 
+  static void switchTab(BuildContext context, int index) {
+    final state = context.findAncestorStateOfType<_MainNavigationState>();
+    state?._onTabTap(index);
+  }
+
   @override
   State<MainNavigation> createState() => _MainNavigationState();
 }
@@ -18,6 +23,7 @@ class _MainNavigationState extends State<MainNavigation> {
 
   final _homeKey = GlobalKey<HomeScreenState>();
   final _learnKey = GlobalKey<LearnScreenState>();
+  final _leaderboardKey = GlobalKey<LeaderboardScreenState>();
 
   late final List<Widget> _screens;
 
@@ -29,7 +35,7 @@ class _MainNavigationState extends State<MainNavigation> {
       LearnScreen(key: _learnKey),
       const QuizSelectionScreen(),
       const SimulationScreen(),
-      const LeaderboardScreen(),
+      LeaderboardScreen(key: _leaderboardKey),
     ];
   }
 
@@ -37,6 +43,7 @@ class _MainNavigationState extends State<MainNavigation> {
     setState(() => _currentIndex = index);
     if (index == 0) _homeKey.currentState?.reload();
     if (index == 1) _learnKey.currentState?.reload();
+    if (index == 4) _leaderboardKey.currentState?.reload();
   }
 
   @override

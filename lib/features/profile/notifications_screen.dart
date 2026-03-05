@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import '../../services/auth_service.dart';
 import '../../services/notification_service.dart';
+import '../quiz/pvp_battle_screen.dart';
 
 class NotificationsScreen extends StatefulWidget {
   const NotificationsScreen({super.key});
@@ -71,18 +72,60 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               itemBuilder: (context, i) {
                 final n = _notifications[i];
                 final isRead = n['is_read'] == true;
+                final isPvpInvite = n['type'] == 'pvp_invite';
                 return Opacity(
                   opacity: isRead ? 0.6 : 1.0,
                   child: _NotificationItem(
-                    icon: Icons.notifications,
+                    icon: isPvpInvite
+                        ? Icons.sports_esports
+                        : Icons.notifications,
                     iconBg: isRead
                         ? Colors.grey.shade100
+                        : isPvpInvite
+                        ? Colors.deepPurple.withAlpha(25)
                         : AppColors.primary.withAlpha(25),
                     iconColor: isRead
                         ? Colors.grey.shade500
+                        : isPvpInvite
+                        ? Colors.deepPurple
                         : AppColors.primary,
                     title: n['title'] ?? '',
                     time: _formatTime(n['created_at']),
+                    trailing: (isPvpInvite && !isRead)
+                        ? ElevatedButton(
+                            onPressed: () async {
+                              await NotificationService.markAsRead(n['id']);
+                              if (context.mounted) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) =>
+                                        PvpBattleScreen(roomId: n['message']),
+                                  ),
+                                );
+                              }
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.deepPurple,
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 6,
+                              ),
+                              minimumSize: Size.zero,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                            child: const Text(
+                              'Chấp nhận',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          )
+                        : null,
                     onTap: () async {
                       if (!isRead) {
                         await NotificationService.markAsRead(n['id']);
@@ -114,6 +157,7 @@ class _NotificationItem extends StatelessWidget {
   final String title;
   final String time;
   final VoidCallback? onTap;
+  final Widget? trailing;
 
   const _NotificationItem({
     required this.icon,
@@ -122,6 +166,7 @@ class _NotificationItem extends StatelessWidget {
     required this.title,
     required this.time,
     this.onTap,
+    this.trailing,
   });
 
   @override
@@ -166,6 +211,7 @@ class _NotificationItem extends StatelessWidget {
                 ],
               ),
             ),
+            if (trailing != null) ...[const SizedBox(width: 8), trailing!],
           ],
         ),
       ),

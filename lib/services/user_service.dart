@@ -1,8 +1,25 @@
+import 'dart:io';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/user_model.dart';
+import 'notification_service.dart';
 
 class UserService {
   static final _client = Supabase.instance.client;
+
+  static Future<String> uploadAvatar(String userId, File imageFile) async {
+    final ext = imageFile.path.split('.').last;
+    final path = '$userId/avatar.$ext';
+
+    await _client.storage
+        .from('avatars')
+        .upload(path, imageFile, fileOptions: const FileOptions(upsert: true));
+
+    final publicUrl = _client.storage.from('avatars').getPublicUrl(path);
+
+    await _client.from('users').update({'avatar': publicUrl}).eq('id', userId);
+
+    return publicUrl;
+  }
 
   static Future<UserModel?> getProfile(String userId) async {
     final data = await _client
@@ -38,6 +55,24 @@ class UserService {
         .from('users')
         .update({'xp': newXp, 'level': newLevel})
         .eq('id', userId);
+
+    // Send notification
+    await NotificationService.createNotification(
+      userId: userId,
+      title: 'Bạn nhận được +$xpAmount XP!',
+      message: 'Tổng XP hiện tại: $newXp',
+      type: 'xp',
+    );
+
+    // Notify if level up
+    if (newLevel > profile.level) {
+      await NotificationService.createNotification(
+        userId: userId,
+        title: 'Chúc mừng! Bạn đã lên cấp $newLevel!',
+        message: 'Tiếp tục học tập để đạt cấp cao hơn.',
+        type: 'achievement',
+      );
+    }
   }
 
   static int _calculateLevel(int xp) {

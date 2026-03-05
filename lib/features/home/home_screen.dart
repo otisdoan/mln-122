@@ -3,8 +3,13 @@ import '../../core/theme/app_colors.dart';
 import '../../models/user_model.dart';
 import '../../services/auth_service.dart';
 import '../../services/user_service.dart';
+import '../../services/notification_service.dart';
 import '../../widgets/xp_progress_bar.dart';
 import '../../widgets/stat_card.dart';
+import '../profile/profile_screen.dart';
+import '../profile/notifications_screen.dart';
+import '../home/main_navigation.dart';
+import '../quiz/pvp_battle_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,6 +22,7 @@ class HomeScreenState extends State<HomeScreen> {
   UserModel? _user;
   Map<String, dynamic> _stats = {};
   bool _isLoading = true;
+  int _unreadCount = 0;
 
   @override
   void initState() {
@@ -30,13 +36,16 @@ class HomeScreenState extends State<HomeScreen> {
     try {
       final user = await AuthService.getCurrentUserProfile();
       Map<String, dynamic> stats = {};
+      int unread = 0;
       if (user != null) {
         stats = await UserService.getUserStats(user.id);
+        unread = await NotificationService.getUnreadCount(user.id);
       }
       if (mounted) {
         setState(() {
           _user = user;
           _stats = stats;
+          _unreadCount = unread;
           _isLoading = false;
         });
       }
@@ -122,18 +131,23 @@ class HomeScreenState extends State<HomeScreen> {
       child: Row(
         children: [
           // Avatar
-          Container(
-            width: 48,
-            height: 48,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: AppColors.primary.withAlpha(51),
-                width: 2,
-              ),
-              color: AppColors.primary.withAlpha(25),
+          GestureDetector(
+            onTap: () async {
+              await Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => const ProfileScreen()));
+              _loadData();
+            },
+            child: CircleAvatar(
+              radius: 24,
+              backgroundColor: AppColors.primary.withAlpha(25),
+              backgroundImage: (user?.avatar != null && user!.avatar.isNotEmpty)
+                  ? NetworkImage(user.avatar)
+                  : null,
+              child: (user?.avatar == null || user!.avatar.isEmpty)
+                  ? const Icon(Icons.person, color: AppColors.primary, size: 28)
+                  : null,
             ),
-            child: const Icon(Icons.person, color: AppColors.primary, size: 28),
           ),
           const SizedBox(width: 12),
           Expanded(
@@ -181,12 +195,48 @@ class HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.notifications_outlined,
-              color: AppColors.textSecondary,
-            ),
+          Stack(
+            children: [
+              IconButton(
+                onPressed: () async {
+                  await Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const NotificationsScreen(),
+                    ),
+                  );
+                  _loadData();
+                },
+                icon: const Icon(
+                  Icons.notifications_outlined,
+                  color: AppColors.textSecondary,
+                ),
+              ),
+              if (_unreadCount > 0)
+                Positioned(
+                  right: 6,
+                  top: 6,
+                  child: Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: const BoxDecoration(
+                      color: Colors.red,
+                      shape: BoxShape.circle,
+                    ),
+                    constraints: const BoxConstraints(
+                      minWidth: 18,
+                      minHeight: 18,
+                    ),
+                    child: Text(
+                      '$_unreadCount',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+            ],
           ),
         ],
       ),
@@ -370,6 +420,7 @@ class HomeScreenState extends State<HomeScreen> {
           title: 'Bắt đầu học',
           subtitle: 'Khám phá lý thuyết Giá trị thặng dư',
           color: AppColors.accentBlue,
+          onTap: () => MainNavigation.switchTab(context, 1),
         ),
         const SizedBox(height: 12),
         _QuickActionTile(
@@ -377,6 +428,7 @@ class HomeScreenState extends State<HomeScreen> {
           title: 'Làm trắc nghiệm',
           subtitle: 'Kiểm tra kiến thức đã học',
           color: AppColors.accentGreen,
+          onTap: () => MainNavigation.switchTab(context, 2),
         ),
         const SizedBox(height: 12),
         _QuickActionTile(
@@ -384,6 +436,18 @@ class HomeScreenState extends State<HomeScreen> {
           title: 'Chơi mô phỏng',
           subtitle: 'Thử thách vận hành doanh nghiệp ảo',
           color: AppColors.accentGold,
+          onTap: () => MainNavigation.switchTab(context, 3),
+        ),
+        const SizedBox(height: 12),
+        _QuickActionTile(
+          icon: Icons.sports_esports_rounded,
+          title: 'Thách đấu PvP',
+          subtitle: 'Thi đấu trắc nghiệm với bạn bè',
+          color: Colors.deepPurple,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const PvpBattleScreen()),
+          ),
         ),
       ],
     );
@@ -395,55 +459,60 @@ class _QuickActionTile extends StatelessWidget {
   final String title;
   final String subtitle;
   final Color color;
+  final VoidCallback? onTap;
 
   const _QuickActionTile({
     required this.icon,
     required this.title,
     required this.subtitle,
     required this.color,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: color.withAlpha(25),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: color.withAlpha(51)),
-      ),
-      child: Row(
-        children: [
-          Container(
-            width: 48,
-            height: 48,
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(8),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: color.withAlpha(25),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color.withAlpha(51)),
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 48,
+              height: 48,
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Icon(icon, color: Colors.white),
             ),
-            child: Icon(icon, color: Colors.white),
-          ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(fontWeight: FontWeight.w700, color: color),
-                ),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: AppColors.textSecondary,
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontWeight: FontWeight.w700, color: color),
                   ),
-                ),
-              ],
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: AppColors.textSecondary,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Icon(Icons.chevron_right, color: color),
-        ],
+            Icon(Icons.chevron_right, color: color),
+          ],
+        ),
       ),
     );
   }

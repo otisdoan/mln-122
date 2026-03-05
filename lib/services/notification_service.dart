@@ -40,4 +40,19 @@ class NotificationService {
         .eq('user_id', userId)
         .eq('is_read', false);
   }
+
+  static Future<void> createNotification({
+    required String userId,
+    required String title,
+    String message = '',
+    String type = 'info',
+  }) async {
+    await _client.from('notifications').insert({
+      'user_id': userId,
+      'title': title,
+      'message': message,
+      'type': type,
+      'is_read': false,
+    });
+  }
 }

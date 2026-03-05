@@ -7,10 +7,10 @@ class LeaderboardScreen extends StatefulWidget {
   const LeaderboardScreen({super.key});
 
   @override
-  State<LeaderboardScreen> createState() => _LeaderboardScreenState();
+  State<LeaderboardScreen> createState() => LeaderboardScreenState();
 }
 
-class _LeaderboardScreenState extends State<LeaderboardScreen> {
+class LeaderboardScreenState extends State<LeaderboardScreen> {
   List<LeaderboardEntry> _entries = [];
   bool _isLoading = true;
   String _sortBy = 'xp';
@@ -20,6 +20,8 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     super.initState();
     _loadData();
   }
+
+  void reload() => _loadData();
 
   Future<void> _loadData() async {
     setState(() => _isLoading = true);
@@ -41,10 +43,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
     return Scaffold(
       backgroundColor: AppColors.backgroundLight,
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Navigator.pop(context),
-          icon: const Icon(Icons.arrow_back),
-        ),
+        automaticallyImplyLeading: false,
         title: const Text('BẢNG XẾP HẠNG'),
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.info_outline)),
@@ -111,6 +110,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                         name: _entries[1].username,
                         score: '${_entries[1].score}',
                         rank: 2,
+                        avatarUrl: _entries[1].avatar,
                         avatarSize: 64,
                         podiumHeight: 96,
                         podiumColor: Colors.grey.shade200,
@@ -127,6 +127,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                       name: _entries[0].username,
                       score: '${_entries[0].score}',
                       rank: 1,
+                      avatarUrl: _entries[0].avatar,
                       avatarSize: 96,
                       podiumHeight: 128,
                       podiumColor: AppColors.primary,
@@ -143,6 +144,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                         name: _entries[2].username,
                         score: '${_entries[2].score}',
                         rank: 3,
+                        avatarUrl: _entries[2].avatar,
                         avatarSize: 64,
                         podiumHeight: 80,
                         podiumColor: const Color(0xFFFED7AA),
@@ -170,6 +172,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
                     return _PlayerRow(
                       rank: entry.rank,
                       name: entry.username,
+                      avatarUrl: entry.avatar,
                       department: '',
                       score: '${entry.score}',
                     );
@@ -224,6 +227,7 @@ class _PodiumItem extends StatelessWidget {
   final String name;
   final String score;
   final int rank;
+  final String avatarUrl;
   final double avatarSize;
   final double podiumHeight;
   final Color podiumColor;
@@ -236,6 +240,7 @@ class _PodiumItem extends StatelessWidget {
     required this.name,
     required this.score,
     required this.rank,
+    this.avatarUrl = '',
     required this.avatarSize,
     required this.podiumHeight,
     required this.podiumColor,
@@ -263,10 +268,19 @@ class _PodiumItem extends StatelessWidget {
                 border: Border.all(color: borderColor, width: 4),
                 color: AppColors.primary.withAlpha(51),
               ),
-              child: Icon(
-                Icons.person,
-                size: avatarSize * 0.5,
-                color: AppColors.primary.withAlpha(128),
+              child: ClipOval(
+                child: avatarUrl.isNotEmpty
+                    ? Image.network(
+                        avatarUrl,
+                        fit: BoxFit.cover,
+                        width: avatarSize,
+                        height: avatarSize,
+                      )
+                    : Icon(
+                        Icons.person,
+                        size: avatarSize * 0.5,
+                        color: AppColors.primary.withAlpha(128),
+                      ),
               ),
             ),
             Positioned(
@@ -336,12 +350,14 @@ class _PodiumItem extends StatelessWidget {
 class _PlayerRow extends StatelessWidget {
   final int rank;
   final String name;
+  final String avatarUrl;
   final String department;
   final String score;
 
   const _PlayerRow({
     required this.rank,
     required this.name,
+    this.avatarUrl = '',
     required this.department,
     required this.score,
   });
@@ -379,7 +395,12 @@ class _PlayerRow extends StatelessWidget {
           CircleAvatar(
             radius: 24,
             backgroundColor: AppColors.primary.withAlpha(25),
-            child: Icon(Icons.person, color: AppColors.primary),
+            backgroundImage: avatarUrl.isNotEmpty
+                ? NetworkImage(avatarUrl)
+                : null,
+            child: avatarUrl.isEmpty
+                ? Icon(Icons.person, color: AppColors.primary)
+                : null,
           ),
           const SizedBox(width: 12),
           Expanded(
