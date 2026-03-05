@@ -1,0 +1,354 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+      .podium-shadow {
+        box-shadow: 0 10px 25px -5px rgba(26, 34, 127, 0.3);
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <div
+      class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-2xl"
+    >
+      <!-- Header -->
+      <div
+        class="flex items-center bg-white dark:bg-background-dark p-4 justify-between sticky top-0 z-20 border-b border-slate-200 dark:border-slate-800"
+      >
+        <div
+          class="text-primary dark:text-slate-100 flex size-10 shrink-0 items-center justify-center cursor-pointer"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+        </div>
+        <h2
+          class="text-primary dark:text-slate-100 text-xl font-extrabold leading-tight tracking-tight flex-1 text-center uppercase"
+        >
+          Bảng Xếp Hạng
+        </h2>
+        <div class="flex w-10 items-center justify-end">
+          <button
+            class="flex items-center justify-center text-primary dark:text-slate-100"
+          >
+            <span class="material-symbols-outlined">info</span>
+          </button>
+        </div>
+      </div>
+      <!-- Tabs Navigation -->
+      <div class="bg-white dark:bg-background-dark px-4 py-2">
+        <div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+          <a
+            class="flex flex-col items-center justify-center bg-white dark:bg-primary text-primary dark:text-white rounded-lg py-2 flex-1 shadow-sm transition-all"
+            href="#"
+          >
+            <p class="text-sm font-bold">Hôm nay</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 py-2 flex-1"
+            href="#"
+          >
+            <p class="text-sm font-bold">Tuần này</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 py-2 flex-1"
+            href="#"
+          >
+            <p class="text-sm font-bold">Tất cả</p>
+          </a>
+        </div>
+      </div>
+      <!-- Top 3 Podium -->
+      <div
+        class="flex flex-col items-center px-4 py-8 bg-gradient-to-b from-white to-background-light dark:from-background-dark dark:to-slate-900"
+      >
+        <div class="flex items-end justify-center w-full gap-2 mt-4">
+          <!-- Rank 2 -->
+          <div class="flex flex-col items-center w-1/3">
+            <div class="relative mb-2">
+              <div
+                class="size-16 rounded-full border-4 border-slate-300 bg-cover bg-center overflow-hidden"
+                data-alt="Avatar of second place player"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA9py-JAk_LufvK4wzg4ByskpXYl1hM8U-ixBCCmq2le-quCeqRIVACeu4-aIFSD4itBz4Co3rb_39BMZAg3YSDdnhF-HSkNWi0SWRTUfLhfW2akXUX-2_RGcSNAo2aInYclNzRCsv-Fwl5JhdyMwSDlJJwrB6SE1yXSXyG8rfagf26iI6GmCu-PLFgzpF3nJ8-XLUBHgkd-jUVU-rkgymGop8_R-YMsuvqZmKZVfwjlY7TycPkwVAamj7sTncAxCBOEjArDrgoL7U&quot;);
+                "
+              ></div>
+              <div
+                class="absolute -top-3 left-1/2 -translate-x-1/2 text-slate-400"
+              >
+                <span
+                  class="material-symbols-outlined !text-3xl"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >workspace_premium</span
+                >
+              </div>
+            </div>
+            <div
+              class="bg-slate-200 dark:bg-slate-800 w-full rounded-t-xl podium-shadow p-3 text-center h-24 flex flex-col justify-center"
+            >
+              <p class="font-bold text-xs truncate">Trần Thị B</p>
+              <p class="text-primary dark:text-primary font-extrabold text-sm">
+                12,850
+              </p>
+              <span class="text-[10px] font-bold text-slate-500 uppercase"
+                >Hạng 2</span
+              >
+            </div>
+          </div>
+          <!-- Rank 1 -->
+          <div class="flex flex-col items-center w-1/3 -mt-6">
+            <div class="relative mb-2">
+              <div
+                class="size-24 rounded-full border-4 border-yellow-400 bg-cover bg-center overflow-hidden podium-shadow"
+                data-alt="Avatar of first place player with golden crown"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCnIM6AU3xwu8yoESMdDE0XHvZEpaLDKUuqutpJdsZTOAI8kVgn8Q5-7_qldW6HEOGvf9djRLUCkRqw0kPVwFIk7QmLJq1l73E0plN0Q6xthQ9Tw3c-4J5MVqWsBuxvxnc3u7WU8GO6PJKTKDUdrJmwEA6Ny3QZMP0BGhhsE0Z7CQLeAb-_Foco6OJrBSeEs3NaCW6bxQLAt5E-kUfibF2iweaLksEbByqa9E6NDJyooL0PzG18TTnr4ZQr0yDMsjYXZuvX-jjnl-A&quot;);
+                "
+              ></div>
+              <div
+                class="absolute -top-6 left-1/2 -translate-x-1/2 text-yellow-500 animate-bounce"
+              >
+                <span
+                  class="material-symbols-outlined !text-4xl"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >stars</span
+                >
+              </div>
+            </div>
+            <div
+              class="bg-primary text-white w-full rounded-t-xl podium-shadow p-3 text-center h-32 flex flex-col justify-center"
+            >
+              <p class="font-bold text-sm truncate">Nguyễn Văn A</p>
+              <p class="text-yellow-400 font-extrabold text-lg">15,240</p>
+              <span
+                class="text-[10px] font-bold text-white/70 uppercase tracking-widest"
+                >Quán Quân</span
+              >
+            </div>
+          </div>
+          <!-- Rank 3 -->
+          <div class="flex flex-col items-center w-1/3">
+            <div class="relative mb-2">
+              <div
+                class="size-16 rounded-full border-4 border-orange-400 bg-cover bg-center overflow-hidden"
+                data-alt="Avatar of third place player"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBIrHuNtWc7GBBXCJiqfaqPX_IJKPYSCh0AFzYplRQRwMV9s4VEPMlAItlsM6W1_Mq3sqDTFQoKwD5mXflSPIAc5GjzNQp8z7v5JcU3qzxm_TYxOQFxSp6TxPKY6lHejix_X22ARrwN4AonWiwFPyekpUs9Bx8KtBWU6iAx54ta1Vo9ms6J2HhsdsiOjjkZG_tQrxZ2AuGFys1XUNk9par6jO7-ONSASckhk09Fk5ERk7X-IuAWbSlBuTXU6DEBDtjqKWUQMKEWxiQ&quot;);
+                "
+              ></div>
+              <div
+                class="absolute -top-3 left-1/2 -translate-x-1/2 text-orange-400"
+              >
+                <span
+                  class="material-symbols-outlined !text-3xl"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >workspace_premium</span
+                >
+              </div>
+            </div>
+            <div
+              class="bg-orange-100 dark:bg-slate-800 w-full rounded-t-xl podium-shadow p-3 text-center h-20 flex flex-col justify-center border-t border-orange-200 dark:border-transparent"
+            >
+              <p class="font-bold text-xs truncate">Lê Hoàng C</p>
+              <p class="text-primary dark:text-primary font-extrabold text-sm">
+                11,420
+              </p>
+              <span class="text-[10px] font-bold text-slate-500 uppercase"
+                >Hạng 3</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- List Leaderboard -->
+      <div class="flex-1 px-4 py-2 bg-background-light dark:bg-background-dark">
+        <div class="flex flex-col gap-3 pb-24">
+          <!-- Player Item 4 -->
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm"
+          >
+            <div class="w-8 text-center font-extrabold text-slate-500">4</div>
+            <div
+              class="size-12 rounded-full bg-cover bg-center"
+              data-alt="User profile avatar rank 4"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDMyLB4HQsJNrXws6yEA3k7xkEQJV5HhrI_zWfTn4wrvsF7xKKLMLmBAv2ZfISb77PWx4usN2oGRaMUn0I3P0bRs9RoSNfpBL56SCD5nDh1R2uo0FTteOwrZER02OPq0UVylFwogtYJRMMYpnzrZU3d-L1rjU3G6OmRvns9elBBzykqinvjHEGomUzkjJiAQtzWJTlYOn_snKTy4pnlPa1_Kc4Jji15UYe7Eipw1xGthQr6E6ZOTdYTLkvfmFS1UqAv7MRhdEbPINc&quot;);
+              "
+            ></div>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-slate-900 dark:text-slate-100 truncate">
+                Phạm Minh Đăng
+              </p>
+              <p class="text-xs text-slate-500">Kinh doanh</p>
+            </div>
+            <div class="text-right">
+              <p class="text-primary dark:text-primary font-black">9,800</p>
+              <p class="text-[10px] text-slate-400 font-medium">điểm</p>
+            </div>
+          </div>
+          <!-- Player Item 5 -->
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm"
+          >
+            <div class="w-8 text-center font-extrabold text-slate-500">5</div>
+            <div
+              class="size-12 rounded-full bg-cover bg-center"
+              data-alt="User profile avatar rank 5"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuAR1yxrUNrS9xdUYE71qRaBTtTRS1BIb-QjgpoXIS8rM2gpF_1q4Ll5ndb0kztlLQNUsKvtiPUriKRhPuEYORCjlTWToHtn8ZtJAfb5zJL0vS5jluSZ5D1qWAPLP9t4j7QAX6XuRGubaDl3Co7UrGojwOygQwkaysRkS_QIHzwWOqKn_GS2ua5K3bh6MtveH2hi1Zc9vkKFwQbUxapXOyBuNulGapVBCERhqJn_G2iCxAJOt9uC574vs1wYrUi-A5OF2YP_pw-p2Ik&quot;);
+              "
+            ></div>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-slate-900 dark:text-slate-100 truncate">
+                Võ Thanh Thảo
+              </p>
+              <p class="text-xs text-slate-500">Sản xuất</p>
+            </div>
+            <div class="text-right">
+              <p class="text-primary dark:text-primary font-black">8,450</p>
+              <p class="text-[10px] text-slate-400 font-medium">điểm</p>
+            </div>
+          </div>
+          <!-- Player Item 6 -->
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-100 dark:border-slate-700 shadow-sm"
+          >
+            <div class="w-8 text-center font-extrabold text-slate-500">6</div>
+            <div
+              class="size-12 rounded-full bg-cover bg-center"
+              data-alt="User profile avatar rank 6"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBIqSSeEb9Y7LbYgdr3SQBPlakXXy14nGXtHto9zVAsXkq9cL5lmy-BP7XZ8pNj86MKMPw3VA7ChIxeP_PvY4vWuq8umdfUqziJ6LbzYPQT1IXBYrkrs1sycsW-OP_MGuKGmVche6lOpjqCwL1ib09AT3efHEErzXBMHnes5pMOXXCOn0I4H-fvrkAz-QA5sX4ou8h59NY2SFZ9E2C2n9kpbPUluqzYPgbOxWEI_FmrzL27ZLIz8GgpHHdjG42K_WwyoLTirlh41G0&quot;);
+              "
+            ></div>
+            <div class="flex-1 min-w-0">
+              <p class="font-bold text-slate-900 dark:text-slate-100 truncate">
+                Đỗ Hùng Dũng
+              </p>
+              <p class="text-xs text-slate-500">Tài chính</p>
+            </div>
+            <div class="text-right">
+              <p class="text-primary dark:text-primary font-black">7,200</p>
+              <p class="text-[10px] text-slate-400 font-medium">điểm</p>
+            </div>
+          </div>
+          <!-- Current User Sticky Rank -->
+          <div
+            class="flex items-center gap-4 bg-primary/10 dark:bg-primary/20 p-4 rounded-2xl border-2 border-primary mt-4"
+          >
+            <div class="w-8 text-center font-black text-primary">24</div>
+            <div
+              class="size-12 rounded-full bg-cover bg-center ring-4 ring-primary/30"
+              data-alt="Current user avatar highlighted"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBASZUjoDqEZpUJyfbkKwmQdorH-PDUUXtqfiEFtxgJKVZiux_AsATWOd2k_6_GA3_2GaP93thlVhv8EcR_ruKcZxZVvI_K-GAjsQNyOEh4AIrUPC4iZsQ3_u4Fyep-WXmuoKZmyWkuryc0ma9aGy64TTZL7Z0HMAjT5dTcnQTFqgjHKnUA0e1Xd2dSmPq8rgjHOMP4Aa2kaHsGv6rkkS88SWEe9HuzBrBLX2x0Z7Rs4Rt_vsWS22Uc0bIDCBVGwRX6Ef-kRQBYCNQ&quot;);
+              "
+            ></div>
+            <div class="flex-1 min-w-0">
+              <p
+                class="font-extrabold text-slate-900 dark:text-slate-100 truncate"
+              >
+                Bạn (Tôi)
+              </p>
+              <p class="text-xs text-primary font-bold">Thặng dư: +15%</p>
+            </div>
+            <div class="text-right">
+              <p class="text-primary font-black text-xl">4,120</p>
+              <p class="text-[10px] text-primary/70 font-bold uppercase">
+                Hạng của bạn
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Navigation Bar -->
+      <div
+        class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 px-6 py-3 flex justify-between items-center z-50"
+      >
+        <a
+          class="flex flex-col items-center text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <span class="text-[10px] font-bold mt-1">Trang chủ</span>
+        </a>
+        <a
+          class="flex flex-col items-center text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">analytics</span>
+          <span class="text-[10px] font-bold mt-1">Mô phỏng</span>
+        </a>
+        <div class="relative -top-8 flex flex-col items-center">
+          <div
+            class="size-14 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/40 ring-4 ring-white dark:ring-background-dark"
+          >
+            <span class="material-symbols-outlined !text-3xl">add</span>
+          </div>
+        </div>
+        <a class="flex flex-col items-center text-primary" href="#">
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >leaderboard</span
+          >
+          <span class="text-[10px] font-bold mt-1">Bảng xếp hạng</span>
+        </a>
+        <a
+          class="flex flex-col items-center text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">person</span>
+          <span class="text-[10px] font-bold mt-1">Cá nhân</span>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Thông báo - Mô Phỏng Giá Trị Thặng Dư</title>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col"
+  >
+    <header
+      class="sticky top-0 z-10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10"
+    >
+      <div
+        class="flex items-center p-4 justify-between max-w-2xl mx-auto w-full"
+      >
+        <div
+          class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 cursor-pointer"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+        </div>
+        <h1
+          class="text-primary text-lg font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Thông báo
+        </h1>
+        <div class="flex w-10 items-center justify-end">
+          <button
+            class="flex size-10 cursor-pointer items-center justify-center rounded-full hover:bg-primary/10 text-primary"
+          >
+            <span class="material-symbols-outlined">more_vert</span>
+          </button>
+        </div>
+      </div>
+      <div class="max-w-2xl mx-auto w-full">
+        <div class="flex px-4 gap-8">
+          <a
+            class="flex flex-col items-center justify-center border-b-2 border-primary text-primary pb-3 pt-4"
+            href="#"
+          >
+            <p class="text-sm font-bold">Tất cả</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4"
+            href="#"
+          >
+            <p class="text-sm font-bold">Chưa đọc</p>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="flex-1 max-w-2xl mx-auto w-full px-4 py-6 space-y-6">
+      <div>
+        <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">
+          Mới nhất
+        </h3>
+        <div class="space-y-3">
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-slate-800/50 p-4 rounded-xl shadow-sm border border-primary/5"
+          >
+            <div
+              class="flex items-center justify-center rounded-full bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 shrink-0 size-12"
+            >
+              <span class="material-symbols-outlined">trending_down</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-snug"
+              >
+                Bạn bị vượt mặt trên bảng xếp hạng
+              </p>
+              <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">
+                10 phút trước
+              </p>
+            </div>
+            <div class="shrink-0">
+              <button
+                class="bg-primary text-white px-4 py-1.5 rounded-full text-xs font-bold hover:bg-primary/90 transition-colors"
+              >
+                Xem ngay
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-slate-800/50 p-4 rounded-xl shadow-sm border border-primary/5"
+          >
+            <div
+              class="flex items-center justify-center rounded-full bg-primary/10 text-primary shrink-0 size-12"
+            >
+              <span class="material-symbols-outlined">swords</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-snug"
+              >
+                <span class="text-primary">Nguyễn Văn A</span> mời bạn thi đấu
+              </p>
+              <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">
+                45 phút trước
+              </p>
+            </div>
+            <div class="shrink-0">
+              <button
+                class="bg-primary text-white px-4 py-1.5 rounded-full text-xs font-bold hover:bg-primary/90 transition-colors"
+              >
+                Chơi ngay
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-slate-800/50 p-4 rounded-xl shadow-sm border border-primary/5"
+          >
+            <div
+              class="flex items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 shrink-0 size-12"
+            >
+              <span class="material-symbols-outlined"
+                >assignment_turned_in</span
+              >
+            </div>
+            <div class="flex-1 min-w-0">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-sm font-semibold leading-snug"
+              >
+                Nhiệm vụ mới đã sẵn sàng
+              </p>
+              <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">
+                2 giờ trước
+              </p>
+            </div>
+            <div class="shrink-0">
+              <button
+                class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-bold hover:bg-primary/20 transition-colors"
+              >
+                Chi tiết
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">
+          Cũ hơn
+        </h3>
+        <div class="space-y-3 opacity-70">
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-slate-800/30 p-4 rounded-xl border border-transparent"
+          >
+            <div
+              class="flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 shrink-0 size-12"
+            >
+              <span class="material-symbols-outlined">payments</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-snug"
+              >
+                Giá trị thặng dư kỳ trước đã được kết toán
+              </p>
+              <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">
+                Hôm qua
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-4 bg-white dark:bg-slate-800/30 p-4 rounded-xl border border-transparent"
+          >
+            <div
+              class="flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 shrink-0 size-12"
+            >
+              <span class="material-symbols-outlined">verified</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-sm font-medium leading-snug"
+              >
+                Chào mừng bạn gia nhập thị trường mô phỏng
+              </p>
+              <p class="text-slate-500 dark:text-slate-400 text-xs mt-1">
+                2 ngày trước
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <nav
+      class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-primary/10 z-20"
+    >
+      <div class="max-w-2xl mx-auto flex items-center px-4 pb-6 pt-2">
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Trang chủ
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">leaderboard</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Xếp hạng
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-primary"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >notifications</span
+          >
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Thông báo
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">person</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Cá nhân
+          </p>
+        </a>
+      </div>
+    </nav>
+    <div class="h-20 shrink-0"></div>
+  </body>
+</html>

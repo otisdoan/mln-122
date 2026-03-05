@@ -1,0 +1,316 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              display: ["Lexend", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Thành tích - Mô Phỏng Giá Trị Thặng Dư</title>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col"
+  >
+    <!-- Header -->
+    <header
+      class="sticky top-0 z-10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10"
+    >
+      <div
+        class="flex items-center p-4 justify-between max-w-md mx-auto w-full"
+      >
+        <button
+          class="text-primary dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 transition-colors"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+        <h2
+          class="text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10"
+        >
+          Thành tích
+        </h2>
+      </div>
+    </header>
+    <main class="flex-1 max-w-md mx-auto w-full pb-24">
+      <!-- Stats Summary -->
+      <div class="flex flex-wrap gap-3 px-4 py-6">
+        <div
+          class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl border border-primary/10 bg-white dark:bg-slate-800/50 p-4 items-center text-center shadow-sm"
+        >
+          <p
+            class="text-primary dark:text-primary tracking-tight text-2xl font-bold leading-tight"
+          >
+            12
+          </p>
+          <p
+            class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider"
+          >
+            Huy hiệu
+          </p>
+        </div>
+        <div
+          class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl border border-primary/10 bg-white dark:bg-slate-800/50 p-4 items-center text-center shadow-sm"
+        >
+          <p
+            class="text-primary dark:text-primary tracking-tight text-2xl font-bold leading-tight"
+          >
+            #3
+          </p>
+          <p
+            class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider"
+          >
+            Hạng
+          </p>
+        </div>
+        <div
+          class="flex min-w-[100px] flex-1 flex-col gap-1 rounded-xl border border-primary/10 bg-white dark:bg-slate-800/50 p-4 items-center text-center shadow-sm"
+        >
+          <p
+            class="text-primary dark:text-primary tracking-tight text-2xl font-bold leading-tight"
+          >
+            85%
+          </p>
+          <p
+            class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider"
+          >
+            Hoàn thành
+          </p>
+        </div>
+      </div>
+      <!-- Section Title -->
+      <div class="px-4 mb-4 flex items-center justify-between">
+        <h3 class="text-lg font-bold leading-tight tracking-tight">
+          Huy hiệu của bạn
+        </h3>
+        <span
+          class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full"
+          >Sắp đạt (2)</span
+        >
+      </div>
+      <!-- Achievements Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-4">
+        <!-- Achievement Card 1 -->
+        <div
+          class="flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-primary/5 shadow-sm"
+        >
+          <div
+            class="w-full aspect-square rounded-lg bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center relative overflow-hidden group"
+          >
+            <div
+              class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+            <span
+              class="material-symbols-outlined text-6xl text-primary"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >military_tech</span
+            >
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-base font-bold leading-tight">
+              Bậc thầy giá trị thặng dư
+            </h4>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-xs leading-normal"
+            >
+              Tích lũy tổng giá trị thặng dư vượt mốc 1,000,000 đơn vị.
+            </p>
+            <div class="pt-2">
+              <div
+                class="flex justify-between text-[10px] font-bold text-primary mb-1"
+              >
+                <span>TIẾN ĐỘ</span>
+                <span>100%</span>
+              </div>
+              <div class="w-full bg-primary/10 rounded-full h-1.5">
+                <div class="bg-primary h-1.5 rounded-full w-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Achievement Card 2 -->
+        <div
+          class="flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-primary/5 shadow-sm"
+        >
+          <div
+            class="w-full aspect-square rounded-lg bg-gradient-to-br from-amber-500/20 to-amber-500/5 flex items-center justify-center relative overflow-hidden"
+          >
+            <span
+              class="material-symbols-outlined text-6xl text-amber-600"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >stars</span
+            >
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-base font-bold leading-tight">Vua lợi nhuận</h4>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-xs leading-normal"
+            >
+              Đạt tỷ suất lợi nhuận ròng trên 40% trong 12 chu kỳ liên tiếp.
+            </p>
+            <div class="pt-2">
+              <div
+                class="flex justify-between text-[10px] font-bold text-amber-600 mb-1"
+              >
+                <span>TIẾN ĐỘ</span>
+                <span>75%</span>
+              </div>
+              <div class="w-full bg-amber-500/10 rounded-full h-1.5">
+                <div class="bg-amber-500 h-1.5 rounded-full w-[75%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Achievement Card 3 -->
+        <div
+          class="flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-primary/5 shadow-sm"
+        >
+          <div
+            class="w-full aspect-square rounded-lg bg-gradient-to-br from-indigo-500/20 to-indigo-500/5 flex items-center justify-center relative overflow-hidden"
+          >
+            <span
+              class="material-symbols-outlined text-6xl text-indigo-600"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >psychology</span
+            >
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-base font-bold leading-tight">
+              Nhà tư bản thông minh
+            </h4>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-xs leading-normal"
+            >
+              Tối ưu hóa thành công quy trình sản xuất dây chuyền phức hợp.
+            </p>
+            <div class="pt-2">
+              <div
+                class="flex justify-between text-[10px] font-bold text-indigo-600 mb-1"
+              >
+                <span>TIẾN ĐỘ</span>
+                <span>40%</span>
+              </div>
+              <div class="w-full bg-indigo-500/10 rounded-full h-1.5">
+                <div class="bg-indigo-500 h-1.5 rounded-full w-[40%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Achievement Card 4 (Locked) -->
+        <div
+          class="flex flex-col gap-4 p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-primary/5 shadow-sm opacity-60"
+        >
+          <div
+            class="w-full aspect-square rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center relative overflow-hidden grayscale"
+          >
+            <span class="material-symbols-outlined text-6xl text-slate-400"
+              >lock</span
+            >
+          </div>
+          <div class="space-y-2">
+            <h4 class="text-base font-bold leading-tight">Đế chế không ngủ</h4>
+            <p
+              class="text-slate-500 dark:text-slate-400 text-xs leading-normal"
+            >
+              Vận hành doanh nghiệp liên tục 24 chu kỳ không thua lỗ.
+            </p>
+            <div class="pt-2">
+              <div
+                class="flex justify-between text-[10px] font-bold text-slate-400 mb-1"
+              >
+                <span>TIẾN ĐỘ</span>
+                <span>10%</span>
+              </div>
+              <div
+                class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-1.5"
+              >
+                <div class="bg-slate-400 h-1.5 rounded-full w-[10%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Bottom Navigation Bar -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-primary/10 px-4 pb-4 pt-2 safe-area-bottom"
+    >
+      <div class="max-w-md mx-auto flex justify-around items-center">
+        <a
+          class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined">play_circle</span>
+          <span class="text-[10px] font-medium uppercase tracking-wide"
+            >Mô phỏng</span
+          >
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined">analytics</span>
+          <span class="text-[10px] font-medium uppercase tracking-wide"
+            >Thị trường</span
+          >
+        </a>
+        <a class="flex flex-col items-center gap-1 text-primary" href="#">
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >emoji_events</span
+          >
+          <span class="text-[10px] font-bold uppercase tracking-wide"
+            >Thành tích</span
+          >
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-slate-400 hover:text-primary transition-colors"
+          href="#"
+        >
+          <span class="material-symbols-outlined">person</span>
+          <span class="text-[10px] font-medium uppercase tracking-wide"
+            >Hồ sơ</span
+          >
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>

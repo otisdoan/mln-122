@@ -1,0 +1,248 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Chi tiết bài học - Giá trị thặng dư</title>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden"
+    >
+      <!-- Top Navigation -->
+      <nav
+        class="sticky top-0 z-50 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between border-b border-primary/10"
+      >
+        <div
+          class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 transition-colors cursor-pointer"
+          data-icon="ArrowLeft"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+        </div>
+        <h2
+          class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Chi tiết bài học
+        </h2>
+        <div class="flex w-10 items-center justify-end">
+          <button
+            class="flex items-center justify-center rounded-full size-10 bg-transparent text-primary hover:bg-primary/10 transition-colors"
+          >
+            <span class="material-symbols-outlined">share</span>
+          </button>
+        </div>
+      </nav>
+      <!-- Main Content Container -->
+      <main class="flex-1 max-w-2xl mx-auto w-full px-4 pb-32">
+        <!-- Hero Header -->
+        <div class="pt-8 pb-6">
+          <div
+            class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-4 uppercase tracking-wider"
+          >
+            Kinh tế chính trị
+          </div>
+          <h1
+            class="text-slate-900 dark:text-slate-100 text-3xl font-bold leading-tight mb-4"
+          >
+            Giá trị thặng dư là gì?
+          </h1>
+          <div class="flex items-center gap-4 text-slate-500 text-sm">
+            <span class="flex items-center gap-1"
+              ><span class="material-symbols-outlined text-sm">schedule</span>
+              15 phút đọc</span
+            >
+            <span class="flex items-center gap-1"
+              ><span class="material-symbols-outlined text-sm">visibility</span>
+              1.2k lượt học</span
+            >
+          </div>
+        </div>
+        <!-- Content Sections -->
+        <section class="space-y-8">
+          <!-- Definition -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <div class="w-1 h-6 bg-primary rounded-full"></div>
+              <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold">
+                1. Khái niệm
+              </h3>
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800/50 p-5 rounded-xl border border-primary/5 shadow-sm"
+            >
+              <p
+                class="text-slate-700 dark:text-slate-300 text-base leading-relaxed"
+              >
+                Giá trị thặng dư (ký hiệu là
+                <span class="font-bold text-primary">m</span> - Mehrwert) là bộ
+                phận giá trị mới dôi ra ngoài giá trị sức lao động do công nhân
+                làm thuê tạo ra và bị nhà tư bản chiếm không.
+              </p>
+            </div>
+          </div>
+          <!-- Economic Formula -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <div class="w-1 h-6 bg-primary rounded-full"></div>
+              <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold">
+                2. Công thức kinh tế
+              </h3>
+            </div>
+            <div
+              class="bg-primary text-white p-8 rounded-2xl shadow-lg flex flex-col items-center justify-center text-center"
+            >
+              <span
+                class="text-primary/70 text-sm font-medium mb-2 uppercase tracking-widest"
+                >Giá trị hàng hóa</span
+              >
+              <div class="text-3xl font-bold tracking-widest">
+                W = C + V + m
+              </div>
+              <div
+                class="grid grid-cols-3 gap-4 mt-6 w-full text-xs font-light border-t border-white/20 pt-4"
+              >
+                <div>
+                  <span class="font-bold block text-lg">C</span> Tư bản bất biến
+                </div>
+                <div>
+                  <span class="font-bold block text-lg">V</span> Tư bản khả biến
+                </div>
+                <div>
+                  <span class="font-bold block text-lg">m</span> Giá trị thặng
+                  dư
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Example Illustrative -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <div class="w-1 h-6 bg-primary rounded-full"></div>
+              <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold">
+                3. Ví dụ minh họa
+              </h3>
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800/50 rounded-xl overflow-hidden border border-primary/5 shadow-sm"
+            >
+              <div class="aspect-video bg-slate-200 relative">
+                <img
+                  alt="Nhà máy sản xuất hiện đại"
+                  class="w-full h-full object-cover"
+                  data-alt="Dây chuyền sản xuất tự động trong nhà máy"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI6LUPSEfkPaPdk_51XQsDw-2_AxnEl1WKm5wQvH7UBjDtEpl94pi4dd0ZFwKQIad_hGw3uhZfUTTZH3QgvfHZoP7U5IRdvi9IGfKebcsK0hs-ZFDCs1LDincBu7Mj7mZePUl45KQ-yqpzg2K4lZJRkCqf3lH_s_JEiMnb3s2I3bkUQkswUS7ZSG9ScnGEalDUsi5KnJDxyj0t5ZBpSzWIZiWnX8GBm7YjV8Y_mcpSYzD6zALr4gx5Ucd8ZJgjs6Ok8svt3QwHugs"
+                />
+              </div>
+              <div class="p-5">
+                <p
+                  class="text-slate-700 dark:text-slate-300 text-base leading-relaxed italic"
+                >
+                  "Giả sử một công nhân làm việc 8 giờ một ngày. Trong 4 giờ
+                  đầu, người đó tạo ra một lượng giá trị bằng đúng tiền lương
+                  của mình (v). Trong 4 giờ còn lại, người đó tiếp tục làm việc
+                  và tạo ra thêm một lượng giá trị mới dôi ra, phần này thuộc về
+                  chủ doanh nghiệp. Đó chính là giá trị thặng dư (m)."
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Importance -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <div class="w-1 h-6 bg-primary rounded-full"></div>
+              <h3 class="text-slate-900 dark:text-slate-100 text-xl font-bold">
+                4. Bản chất của giá trị thặng dư
+              </h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <span class="text-slate-700 dark:text-slate-300"
+                  >Phản ánh mối quan hệ giữa nhà tư bản và công nhân làm
+                  thuê.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <span class="text-slate-700 dark:text-slate-300"
+                  >Nguồn gốc duy nhất của giá trị thặng dư là do lao động của
+                  công nhân tạo ra.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+                <span class="text-slate-700 dark:text-slate-300"
+                  >Là mục đích cuối cùng và động lực của nền sản xuất tư bản chủ
+                  nghĩa.</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+      <!-- Bottom Action Button Container -->
+      <div
+        class="fixed bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pointer-events-none"
+      >
+        <div class="max-w-2xl mx-auto w-full pointer-events-auto">
+          <button
+            class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-xl shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-3"
+          >
+            <span class="material-symbols-outlined">quiz</span>
+            Bắt đầu làm trắc nghiệm
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

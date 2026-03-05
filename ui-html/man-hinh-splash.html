@@ -1,0 +1,142 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mô Phỏng Giá Trị Thặng Dư - Splash Screen</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+              "accent-gold": "#ffd700",
+              "accent-green": "#4ade80",
+            },
+            fontFamily: {
+              display: ["Lexend", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="font-display bg-primary antialiased overflow-hidden">
+    <div
+      class="relative flex h-screen w-full flex-col items-center justify-center p-6 overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.1)_0%,_transparent_70%)]"
+        ></div>
+        <div class="grid grid-cols-12 h-full w-full">
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+          <div class="col-span-1 border-r border-white/5 h-full"></div>
+        </div>
+      </div>
+      <div class="relative z-10 flex flex-col items-center w-full max-w-md">
+        <div class="mb-12 relative">
+          <div
+            class="absolute -inset-8 bg-accent-gold/20 blur-3xl rounded-full"
+          ></div>
+          <div
+            class="relative w-40 h-40 bg-white/10 backdrop-blur-sm rounded-3xl border border-white/20 flex items-center justify-center shadow-2xl"
+          >
+            <div class="flex flex-col items-center">
+              <span
+                class="material-symbols-outlined text-accent-gold text-7xl leading-none"
+              >
+                factory
+              </span>
+              <span
+                class="material-symbols-outlined text-accent-gold text-5xl -mt-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]"
+              >
+                paid
+              </span>
+            </div>
+          </div>
+        </div>
+        <h1
+          class="text-white tracking-tight text-4xl md:text-5xl font-extrabold leading-tight text-center mb-16 drop-shadow-lg"
+        >
+          Mô Phỏng<br />Giá Trị Thặng Dư
+        </h1>
+        <div class="w-full space-y-4">
+          <div class="flex items-end justify-between px-1">
+            <div class="flex flex-col">
+              <span
+                class="text-white/60 text-xs font-medium uppercase tracking-widest"
+                >Hệ thống đang khởi tạo</span
+              >
+              <p class="text-white text-base font-medium leading-normal">
+                Đang tải tài nguyên...
+              </p>
+            </div>
+            <p class="text-accent-green text-lg font-bold leading-normal">
+              72%
+            </p>
+          </div>
+          <div
+            class="relative h-4 w-full bg-white/10 rounded-full overflow-hidden border border-white/5 p-1"
+          >
+            <div
+              class="h-full rounded-full bg-accent-green shadow-[0_0_15px_rgba(74,222,128,0.5)] transition-all duration-500 ease-out"
+              style="width: 72%"
+            ></div>
+          </div>
+          <div class="flex justify-center items-center gap-2 pt-4 opacity-70">
+            <span class="material-symbols-outlined text-white text-sm"
+              >precision_manufacturing</span
+            >
+            <p class="text-white/80 text-sm font-light italic">
+              Phong cách game kinh tế hiện đại
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-10 left-0 w-full px-4 text-center">
+        <p class="text-white/40 text-xs font-normal tracking-wide">
+          © 2024 Surplus Value Simulator. Tất cả quyền được bảo lưu.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

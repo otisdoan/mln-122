@@ -1,0 +1,323 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <div
+      class="max-w-md mx-auto bg-white dark:bg-slate-900 min-h-screen flex flex-col shadow-2xl relative overflow-hidden"
+    >
+      <!-- Header -->
+      <div
+        class="flex items-center bg-white dark:bg-slate-900 p-4 border-b border-primary/10 justify-between sticky top-0 z-10"
+      >
+        <div
+          class="text-primary flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </div>
+        <h2
+          class="text-primary text-lg font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Nhà Máy Chiến Thuật
+        </h2>
+        <div class="flex w-10 items-center justify-end">
+          <button
+            class="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary"
+          >
+            <span class="material-symbols-outlined">settings</span>
+          </button>
+        </div>
+      </div>
+      <!-- Main Gameplay Area -->
+      <div class="flex-1 overflow-y-auto pb-24">
+        <!-- Key Economic Indicators (The Formula C+V+m) -->
+        <div class="p-4 grid grid-cols-3 gap-3">
+          <div
+            class="flex flex-col gap-1 rounded-xl p-3 bg-slate-100 dark:bg-slate-800 border-b-4 border-slate-300 dark:border-slate-700"
+          >
+            <p
+              class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider"
+            >
+              Tư bản (C)
+            </p>
+            <p
+              class="text-primary tracking-tight text-lg font-bold leading-tight"
+            >
+              1.2M
+            </p>
+            <div
+              class="flex items-center gap-1 text-emerald-600 text-[10px] font-bold"
+            >
+              <span class="material-symbols-outlined text-[12px]"
+                >trending_up</span
+              >+5%
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-1 rounded-xl p-3 bg-slate-100 dark:bg-slate-800 border-b-4 border-slate-300 dark:border-slate-700"
+          >
+            <p
+              class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider"
+            >
+              Lương (V)
+            </p>
+            <p
+              class="text-primary tracking-tight text-lg font-bold leading-tight"
+            >
+              450K
+            </p>
+            <div
+              class="flex items-center gap-1 text-rose-600 text-[10px] font-bold"
+            >
+              <span class="material-symbols-outlined text-[12px]"
+                >trending_down</span
+              >-2%
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-1 rounded-xl p-3 bg-primary/10 border-b-4 border-primary/30"
+          >
+            <p class="text-primary text-xs font-bold uppercase tracking-wider">
+              Thặng dư (m)
+            </p>
+            <p
+              class="text-primary tracking-tight text-lg font-bold leading-tight"
+            >
+              750K
+            </p>
+            <div
+              class="flex items-center gap-1 text-emerald-600 text-[10px] font-bold"
+            >
+              <span class="material-symbols-outlined text-[12px]"
+                >trending_up</span
+              >+15%
+            </div>
+          </div>
+        </div>
+        <!-- Factory Status Panel -->
+        <div class="px-4 py-2">
+          <div
+            class="bg-primary rounded-xl p-4 text-white shadow-lg overflow-hidden relative"
+          >
+            <div class="absolute top-0 right-0 p-4 opacity-10">
+              <span class="material-symbols-outlined text-6xl"
+                >precision_manufacturing</span
+              >
+            </div>
+            <h3
+              class="text-sm font-medium opacity-80 mb-4 uppercase tracking-[0.2em]"
+            >
+              Trạng thái nhà máy
+            </h3>
+            <div class="grid grid-cols-2 gap-4 relative z-10">
+              <div class="flex items-center gap-3">
+                <span
+                  class="material-symbols-outlined text-primary bg-white rounded-lg p-1.5"
+                  >groups</span
+                >
+                <div>
+                  <p class="text-[10px] opacity-70 leading-none">Công nhân</p>
+                  <p class="text-base font-bold">50 người</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span
+                  class="material-symbols-outlined text-primary bg-white rounded-lg p-1.5"
+                  >manufacturing</span
+                >
+                <div>
+                  <p class="text-[10px] opacity-70 leading-none">Máy móc</p>
+                  <p class="text-base font-bold">12 dàn máy</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span
+                  class="material-symbols-outlined text-primary bg-white rounded-lg p-1.5"
+                  >bolt</span
+                >
+                <div>
+                  <p class="text-[10px] opacity-70 leading-none">Công nghệ</p>
+                  <p class="text-base font-bold">Bán tự động</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span
+                  class="material-symbols-outlined text-primary bg-white rounded-lg p-1.5"
+                  >schedule</span
+                >
+                <div>
+                  <p class="text-[10px] opacity-70 leading-none">Làm việc</p>
+                  <p class="text-base font-bold">8 giờ/ngày</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Action Buttons Grid -->
+        <div class="p-4 grid grid-cols-2 gap-3">
+          <button
+            class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 border-primary/20 bg-white hover:bg-primary/5 active:scale-95 transition-all"
+          >
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >more_time</span
+            >
+            <span class="text-primary font-bold text-sm">Tăng giờ làm</span>
+          </button>
+          <button
+            class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 border-primary/20 bg-white hover:bg-primary/5 active:scale-95 transition-all"
+          >
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >person_add</span
+            >
+            <span class="text-primary font-bold text-sm">Thuê công nhân</span>
+          </button>
+          <button
+            class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 border-primary/20 bg-white hover:bg-primary/5 active:scale-95 transition-all"
+          >
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >add_shopping_cart</span
+            >
+            <span class="text-primary font-bold text-sm">Mua máy móc</span>
+          </button>
+          <button
+            class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 border-primary/20 bg-white hover:bg-primary/5 active:scale-95 transition-all"
+          >
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >upgrade</span
+            >
+            <span class="text-primary font-bold text-sm">Nâng cấp CN</span>
+          </button>
+        </div>
+        <!-- Results Table / Production Output -->
+        <div class="px-4 py-2">
+          <div
+            class="bg-slate-50 dark:bg-slate-800 rounded-xl p-4 border border-slate-200 dark:border-slate-700"
+          >
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="font-bold text-slate-700 dark:text-slate-200">
+                Báo cáo Sản lượng
+              </h3>
+              <span
+                class="text-[10px] px-2 py-1 bg-primary/10 text-primary rounded-full font-bold uppercase"
+                >Kỳ hiện tại</span
+              >
+            </div>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-slate-500 text-sm">Tổng sản phẩm:</span>
+                <span class="font-bold">2,450 đơn vị</span>
+              </div>
+              <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                <div class="bg-primary h-full w-3/4"></div>
+              </div>
+              <div
+                class="flex justify-between items-center pt-2 border-t border-slate-200 dark:border-slate-700"
+              >
+                <span class="text-slate-500 text-sm font-medium"
+                  >Lợi nhuận ròng:</span
+                >
+                <span class="text-emerald-600 font-bold text-lg">950,000đ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation Bar -->
+      <div
+        class="absolute bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-4 pb-6 pt-2"
+      >
+        <div class="flex gap-2">
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-primary"
+            href="#"
+          >
+            <span class="material-symbols-outlined">factory</span>
+            <p class="text-[10px] font-bold uppercase tracking-tight">
+              Nhà máy
+            </p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">trending_up</span>
+            <p class="text-[10px] font-bold uppercase tracking-tight">
+              Thị trường
+            </p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">auto_fix_high</span>
+            <p class="text-[10px] font-bold uppercase tracking-tight">
+              Kỹ năng
+            </p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400"
+            href="#"
+          >
+            <span class="material-symbols-outlined">person_pin</span>
+            <p class="text-[10px] font-bold uppercase tracking-tight">Hồ sơ</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

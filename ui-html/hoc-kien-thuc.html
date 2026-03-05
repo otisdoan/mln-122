@@ -1,0 +1,307 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Học Kiến Thức - Mô Phỏng Giá Trị Thặng Dư</title>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100"
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden"
+    >
+      <header
+        class="sticky top-0 z-10 flex items-center bg-white dark:bg-background-dark p-4 shadow-sm justify-between border-b border-primary/10"
+      >
+        <div
+          class="text-primary flex size-10 items-center justify-center rounded-lg bg-primary/10"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </div>
+        <h1
+          class="text-primary text-xl font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Học Kiến Thức
+        </h1>
+        <div
+          class="text-primary flex size-10 items-center justify-center rounded-lg bg-primary/10"
+        >
+          <span class="material-symbols-outlined">search</span>
+        </div>
+      </header>
+      <main class="flex-1 pb-24">
+        <section class="px-4 pt-6">
+          <div
+            class="bg-primary/5 rounded-xl p-4 mb-6 border border-primary/10"
+          >
+            <h2 class="text-primary text-lg font-bold mb-1">Tiến độ học tập</h2>
+            <div
+              class="w-full bg-slate-200 dark:bg-slate-700 h-2 rounded-full mt-3 overflow-hidden"
+            >
+              <div class="bg-primary h-full w-[45%]"></div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 text-xs mt-2">
+              Bạn đã hoàn thành 3/6 bài học
+            </p>
+          </div>
+          <h2
+            class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight mb-4"
+          >
+            Các Bài Học Chính
+          </h2>
+          <div class="grid gap-4">
+            <!-- Lesson Card 1 -->
+            <div
+              class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700"
+            >
+              <div
+                class="flex size-14 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >question_mark</span
+                >
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <p
+                  class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+                >
+                  Giá trị thặng dư là gì
+                </p>
+                <p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2"
+                >
+                  Khái niệm cơ bản về nguồn gốc của sự giàu có trong kinh tế
+                  chính trị.
+                </p>
+              </div>
+              <span class="material-symbols-outlined text-slate-400"
+                >chevron_right</span
+              >
+            </div>
+            <!-- Lesson Card 2 -->
+            <div
+              class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700"
+            >
+              <div
+                class="flex size-14 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-600"
+              >
+                <span class="material-symbols-outlined text-3xl">schedule</span>
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <p
+                  class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+                >
+                  Giá trị thặng dư tuyệt đối
+                </p>
+                <p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2"
+                >
+                  Kéo dài ngày lao động vượt quá thời gian lao động tất yếu.
+                </p>
+              </div>
+              <span class="material-symbols-outlined text-slate-400"
+                >chevron_right</span
+              >
+            </div>
+            <!-- Lesson Card 3 -->
+            <div
+              class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700"
+            >
+              <div
+                class="flex size-14 shrink-0 items-center justify-center rounded-lg bg-blue-100 text-blue-600"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >trending_up</span
+                >
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <p
+                  class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+                >
+                  Giá trị thặng dư tương đối
+                </p>
+                <p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2"
+                >
+                  Rút ngắn thời gian lao động tất yếu bằng cách tăng năng suất.
+                </p>
+              </div>
+              <span class="material-symbols-outlined text-slate-400"
+                >chevron_right</span
+              >
+            </div>
+            <!-- Lesson Card 4 -->
+            <div
+              class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700"
+            >
+              <div
+                class="flex size-14 shrink-0 items-center justify-center rounded-lg bg-purple-100 text-purple-600"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >rocket_launch</span
+                >
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <p
+                  class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+                >
+                  Giá trị thặng dư siêu ngạch
+                </p>
+                <p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2"
+                >
+                  Phần giá trị thặng dư thu được nhờ áp dụng công nghệ mới.
+                </p>
+              </div>
+              <span class="material-symbols-outlined text-slate-400">lock</span>
+            </div>
+            <!-- Lesson Card 5 -->
+            <div
+              class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700"
+            >
+              <div
+                class="flex size-14 shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-600"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >account_balance</span
+                >
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <p
+                  class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+                >
+                  Tích lũy tư bản
+                </p>
+                <p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2"
+                >
+                  Sử dụng giá trị thặng dư để tái đầu tư và mở rộng sản xuất.
+                </p>
+              </div>
+              <span class="material-symbols-outlined text-slate-400">lock</span>
+            </div>
+            <!-- Lesson Card 6 -->
+            <div
+              class="flex items-center gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-slate-100 dark:border-slate-700"
+            >
+              <div
+                class="flex size-14 shrink-0 items-center justify-center rounded-lg bg-yellow-100 text-yellow-600"
+              >
+                <span class="material-symbols-outlined text-3xl">payments</span>
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <p
+                  class="text-slate-900 dark:text-white text-base font-bold leading-tight"
+                >
+                  Lợi nhuận
+                </p>
+                <p
+                  class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal line-clamp-2"
+                >
+                  Hình thái biến tướng của giá trị thặng dư trong lưu thông.
+                </p>
+              </div>
+              <span class="material-symbols-outlined text-slate-400">lock</span>
+            </div>
+          </div>
+        </section>
+      </main>
+      <nav
+        class="fixed bottom-0 left-0 right-0 z-20 flex bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 px-2 pb-safe-bottom pt-2"
+      >
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+          href="#"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Home
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-primary"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >book_2</span
+          >
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Học
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+          href="#"
+        >
+          <span class="material-symbols-outlined">quiz</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Trắc nghiệm
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+          href="#"
+        >
+          <span class="material-symbols-outlined">monitoring</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Mô phỏng
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500 dark:text-slate-400"
+          href="#"
+        >
+          <span class="material-symbols-outlined">trophy</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Xếp hạng
+          </p>
+        </a>
+      </nav>
+    </div>
+  </body>
+</html>

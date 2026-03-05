@@ -1,0 +1,231 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              display: ["Lexend", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col"
+  >
+    <header
+      class="sticky top-0 z-10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 px-4 py-4 flex items-center justify-between"
+    >
+      <button
+        class="flex items-center justify-center size-10 rounded-full hover:bg-primary/10 transition-colors"
+      >
+        <span class="material-symbols-outlined text-primary dark:text-slate-100"
+          >arrow_back</span
+        >
+      </button>
+      <h1
+        class="text-lg font-bold tracking-tight text-primary dark:text-slate-100"
+      >
+        Cài đặt hệ thống
+      </h1>
+      <div class="size-10"></div>
+    </header>
+    <main class="flex-1 max-w-2xl mx-auto w-full p-4 space-y-6">
+      <section>
+        <h3
+          class="text-sm font-semibold uppercase tracking-wider text-primary/60 dark:text-slate-400 px-2 mb-3"
+        >
+          Ứng dụng
+        </h3>
+        <div
+          class="bg-white dark:bg-slate-800/50 rounded-xl overflow-hidden border border-primary/5 shadow-sm"
+        >
+          <div
+            class="flex items-center gap-4 px-4 py-4 border-b border-primary/5"
+          >
+            <div
+              class="flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0 size-10"
+            >
+              <span
+                class="material-symbols-outlined text-primary dark:text-slate-100"
+                >volume_up</span
+              >
+            </div>
+            <div class="flex-1">
+              <p class="text-base font-medium leading-none">Âm thanh</p>
+              <p class="text-xs text-slate-500 mt-1">
+                Hiệu ứng âm thanh khi mô phỏng
+              </p>
+            </div>
+            <div class="shrink-0">
+              <label
+                class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-200 dark:bg-slate-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all"
+              >
+                <div
+                  class="h-full aspect-square rounded-full bg-white shadow-md"
+                ></div>
+                <input checked="" class="invisible absolute" type="checkbox" />
+              </label>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 px-4 py-4">
+            <div
+              class="flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0 size-10"
+            >
+              <span
+                class="material-symbols-outlined text-primary dark:text-slate-100"
+                >dark_mode</span
+              >
+            </div>
+            <div class="flex-1">
+              <p class="text-base font-medium leading-none">Chế độ tối</p>
+              <p class="text-xs text-slate-500 mt-1">
+                Giao diện bảo vệ mắt ban đêm
+              </p>
+            </div>
+            <div class="shrink-0">
+              <label
+                class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-200 dark:bg-slate-700 p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all"
+              >
+                <div
+                  class="h-full aspect-square rounded-full bg-white shadow-md"
+                ></div>
+                <input class="invisible absolute" type="checkbox" />
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3
+          class="text-sm font-semibold uppercase tracking-wider text-primary/60 dark:text-slate-400 px-2 mb-3"
+        >
+          Ngôn ngữ
+        </h3>
+        <div
+          class="bg-white dark:bg-slate-800/50 rounded-xl p-4 border border-primary/5 shadow-sm"
+        >
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center justify-center rounded-lg bg-primary/10 dark:bg-primary/20 shrink-0 size-10"
+            >
+              <span
+                class="material-symbols-outlined text-primary dark:text-slate-100"
+                >translate</span
+              >
+            </div>
+            <div class="flex-1">
+              <select
+                class="w-full bg-transparent border-none focus:ring-0 text-base font-medium p-0"
+              >
+                <option value="vi">Tiếng Việt</option>
+                <option value="en">English (US)</option>
+                <option value="fr">Français</option>
+              </select>
+              <p class="text-xs text-slate-500 mt-1">
+                Chọn ngôn ngữ hiển thị chính
+              </p>
+            </div>
+            <span class="material-symbols-outlined text-slate-400"
+              >expand_more</span
+            >
+          </div>
+        </div>
+      </section>
+      <section class="pt-4">
+        <button
+          class="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-red-50 dark:bg-red-900/10 text-red-600 dark:text-red-400 font-semibold border border-red-100 dark:border-red-900/20 hover:bg-red-100 transition-colors"
+        >
+          <span class="material-symbols-outlined">logout</span>
+          Đăng xuất tài khoản
+        </button>
+        <p class="text-center text-xs text-slate-400 mt-6 font-medium">
+          Phiên bản 2.4.0 (Build 2024)
+        </p>
+      </section>
+    </main>
+    <nav
+      class="bg-white dark:bg-slate-900 border-t border-primary/10 px-4 pb-6 pt-2"
+    >
+      <div class="flex justify-around max-w-2xl mx-auto">
+        <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+          <span class="material-symbols-outlined">home</span>
+          <p class="text-[10px] font-medium uppercase tracking-tight">
+            Trang chủ
+          </p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+          <span class="material-symbols-outlined">analytics</span>
+          <p class="text-[10px] font-medium uppercase tracking-tight">
+            Mô phỏng
+          </p>
+        </a>
+        <a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+          <span class="material-symbols-outlined">description</span>
+          <p class="text-[10px] font-medium uppercase tracking-tight">
+            Báo cáo
+          </p>
+        </a>
+        <a
+          class="flex flex-col items-center gap-1 text-primary dark:text-slate-100"
+          href="#"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >settings</span
+          >
+          <p class="text-[10px] font-bold uppercase tracking-tight">Cài đặt</p>
+        </a>
+      </div>
+    </nav>
+  </body>
+</html>

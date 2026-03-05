@@ -1,0 +1,293 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              display: ["Lexend", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Hồ sơ cá nhân - Mô Phỏng Giá Trị Thặng Dư</title>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300"
+  >
+    <div
+      class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl"
+    >
+      <!-- Header Section -->
+      <div
+        class="flex items-center p-4 justify-between border-b border-primary/10 dark:border-primary/20 sticky top-0 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md z-10"
+      >
+        <div
+          class="text-primary dark:text-primary/80 flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors cursor-pointer"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+        </div>
+        <h2
+          class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Hồ sơ cá nhân
+        </h2>
+        <div class="flex w-10 items-center justify-end">
+          <button
+            class="text-primary dark:text-primary/80 flex size-10 items-center justify-center rounded-full hover:bg-primary/10 transition-colors"
+          >
+            <span class="material-symbols-outlined">settings</span>
+          </button>
+        </div>
+      </div>
+      <!-- Profile Hero -->
+      <div class="flex p-6 @container">
+        <div class="flex w-full flex-col gap-6 items-center">
+          <div class="flex gap-4 flex-col items-center">
+            <div class="relative">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32 border-4 border-primary/20 shadow-lg"
+                data-alt="Professional avatar photo of a male user"
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCdeOWRJZFAo0KHjRSonjW1lE5l40SILaRzECspFq9-mT8vzBCPTAKRZy_ZPUkYE4Pjl4tGt1UyXUZK1k4AQtZsbw5VoEcF2ElkbEsYukBvS7B3jF8XcsQlkWPLI5qol4E79vkFhs27ogaECutCdxGAzuTnpkJTWGAR-79RW_oK7HRZvO3crgPyXQcSOEQ8a2ZdRpsUGnCKVgS-YyUuzphmrxYlefRx7OzluoyIdVTiNlyalyi-MsTHdewZepb5DDO2i9YIEIIuaoU&quot;);
+                "
+              ></div>
+              <div
+                class="absolute bottom-1 right-1 bg-primary text-white size-8 rounded-full flex items-center justify-center border-2 border-white dark:border-background-dark"
+              >
+                <span class="material-symbols-outlined text-sm">edit</span>
+              </div>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+              <p
+                class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight text-center"
+              >
+                Nguyễn Văn A
+              </p>
+              <p
+                class="text-primary font-medium text-base leading-normal text-center"
+              >
+                Cấp độ 15 - Nhà Kinh tế học
+              </p>
+            </div>
+          </div>
+          <button
+            class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-11 px-6 bg-primary text-white text-sm font-bold leading-normal tracking-wide shadow-md hover:bg-primary/90 transition-all w-full max-w-xs"
+          >
+            <span class="material-symbols-outlined mr-2 text-lg"
+              >edit_note</span
+            >
+            <span class="truncate">Chỉnh sửa hồ sơ</span>
+          </button>
+        </div>
+      </div>
+      <!-- Level Progress -->
+      <div
+        class="flex flex-col gap-3 px-6 py-4 mx-6 mb-6 rounded-2xl bg-primary/5 dark:bg-primary/10 border border-primary/10"
+      >
+        <div class="flex gap-6 justify-between items-end">
+          <p class="text-slate-900 dark:text-slate-100 text-base font-semibold">
+            Tiến trình cấp độ
+          </p>
+          <p class="text-primary dark:text-primary/80 text-sm font-bold">
+            650 / 1,000 XP
+          </p>
+        </div>
+        <div
+          class="h-3 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden"
+        >
+          <div class="h-full rounded-full bg-primary" style="width: 65%"></div>
+        </div>
+        <p
+          class="text-slate-500 dark:text-slate-400 text-xs font-medium italic"
+        >
+          Còn 350 XP nữa để đạt cấp 16
+        </p>
+      </div>
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-3 gap-3 px-6 mb-8">
+        <div
+          class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm items-center text-center"
+        >
+          <span class="material-symbols-outlined text-primary mb-1">quiz</span>
+          <p
+            class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider"
+          >
+            Bài Quiz
+          </p>
+          <p class="text-slate-900 dark:text-slate-100 text-xl font-bold">42</p>
+        </div>
+        <div
+          class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm items-center text-center"
+        >
+          <span class="material-symbols-outlined text-primary mb-1"
+            >monitoring</span
+          >
+          <p
+            class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider"
+          >
+            Mô phỏng
+          </p>
+          <p class="text-slate-900 dark:text-slate-100 text-xl font-bold">
+            128
+          </p>
+        </div>
+        <div
+          class="flex flex-col gap-2 rounded-xl p-4 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 shadow-sm items-center text-center"
+        >
+          <span class="material-symbols-outlined text-primary mb-1"
+            >trophy</span
+          >
+          <p
+            class="text-slate-500 dark:text-slate-400 text-[10px] uppercase font-bold tracking-wider"
+          >
+            Kỷ lục
+          </p>
+          <p class="text-slate-900 dark:text-slate-100 text-xl font-bold">
+            8,500
+          </p>
+        </div>
+      </div>
+      <!-- Settings Section -->
+      <div class="px-6 pb-24">
+        <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold mb-4">
+          Cài đặt hệ thống
+        </h3>
+        <div class="flex flex-col gap-1">
+          <!-- Sound Setting -->
+          <div
+            class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl mb-2"
+          >
+            <div class="flex items-center gap-3">
+              <span
+                class="material-symbols-outlined text-slate-600 dark:text-slate-400"
+                >volume_up</span
+              >
+              <span class="font-medium">Âm thanh</span>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input checked="" class="sr-only peer" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"
+              ></div>
+            </label>
+          </div>
+          <!-- Dark Mode Setting -->
+          <div
+            class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl mb-2"
+          >
+            <div class="flex items-center gap-3">
+              <span
+                class="material-symbols-outlined text-slate-600 dark:text-slate-400"
+                >dark_mode</span
+              >
+              <span class="font-medium">Chế độ tối</span>
+            </div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input class="sr-only peer" type="checkbox" />
+              <div
+                class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"
+              ></div>
+            </label>
+          </div>
+          <!-- Language (Bonus) -->
+          <div
+            class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl mb-6"
+          >
+            <div class="flex items-center gap-3">
+              <span
+                class="material-symbols-outlined text-slate-600 dark:text-slate-400"
+                >language</span
+              >
+              <span class="font-medium">Ngôn ngữ</span>
+            </div>
+            <span class="text-primary text-sm font-bold">Tiếng Việt</span>
+          </div>
+          <!-- Logout -->
+          <button
+            class="flex items-center justify-center gap-2 p-4 w-full bg-red-50 dark:bg-red-900/10 text-red-600 dark:text-red-400 rounded-xl font-bold hover:bg-red-100 transition-colors"
+          >
+            <span class="material-symbols-outlined">logout</span>
+            Đăng xuất
+          </button>
+        </div>
+      </div>
+      <!-- Bottom Navigation Bar -->
+      <div
+        class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md flex gap-2 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark px-4 pb-4 pt-2 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]"
+      >
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Trang chủ
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">show_chart</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Mô phỏng
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+          href="#"
+        >
+          <span class="material-symbols-outlined">leaderboard</span>
+          <p class="text-[10px] font-medium leading-normal tracking-wide">
+            Xếp hạng
+          </p>
+        </a>
+        <a
+          class="flex flex-1 flex-col items-center justify-center gap-1 text-primary"
+          href="#"
+        >
+          <span class="material-symbols-outlined fill-[1]">person</span>
+          <p class="text-[10px] font-bold leading-normal tracking-wide">
+            Hồ sơ
+          </p>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

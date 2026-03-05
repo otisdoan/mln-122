@@ -1,0 +1,329 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1a227f",
+              "background-light": "#f6f6f8",
+              "background-dark": "#121320",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "1rem",
+              xl: "1.5rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Lexend", sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .material-symbols-fill {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100"
+  >
+    <div
+      class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl"
+    >
+      <!-- Header Section -->
+      <div
+        class="flex items-center bg-white dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-primary/10"
+      >
+        <div
+          class="text-primary flex size-10 shrink-0 items-center justify-center cursor-pointer hover:bg-primary/5 rounded-full"
+        >
+          <span class="material-symbols-outlined">arrow_back</span>
+        </div>
+        <h2
+          class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center"
+        >
+          Chọn bài trắc nghiệm
+        </h2>
+        <div class="size-10 flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined">more_vert</span>
+        </div>
+      </div>
+      <!-- Tab Selection -->
+      <div class="bg-white dark:bg-background-dark">
+        <div
+          class="flex border-b border-primary/10 px-4 gap-8 overflow-x-auto no-scrollbar"
+        >
+          <a
+            class="flex flex-col items-center justify-center border-b-[3px] border-primary text-primary pb-3 pt-4 shrink-0"
+            href="#"
+          >
+            <p class="text-sm font-bold">Cơ bản</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 shrink-0"
+            href="#"
+          >
+            <p class="text-sm font-bold">Trung bình</p>
+          </a>
+          <a
+            class="flex flex-col items-center justify-center border-b-[3px] border-transparent text-slate-500 dark:text-slate-400 pb-3 pt-4 shrink-0"
+            href="#"
+          >
+            <p class="text-sm font-bold">Nâng cao</p>
+          </a>
+        </div>
+      </div>
+      <!-- Content Area -->
+      <div class="flex-1 overflow-y-auto px-4 py-6 space-y-4">
+        <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">
+          Danh sách bộ câu hỏi
+        </h3>
+        <!-- Question Card 1 -->
+        <div
+          class="flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-primary/5"
+        >
+          <div class="flex flex-[2_2_0px] flex-col justify-between">
+            <div class="flex flex-col gap-1">
+              <p class="text-slate-900 dark:text-slate-100 text-base font-bold">
+                Kiến thức nền tảng 01
+              </p>
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+                <span
+                  class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs font-medium"
+                >
+                  <span class="material-symbols-outlined text-sm">quiz</span> 10
+                  câu hỏi
+                </span>
+                <span
+                  class="flex items-center gap-0.5 text-yellow-500 text-xs font-medium"
+                >
+                  <span
+                    class="material-symbols-outlined material-symbols-fill text-sm"
+                    >star</span
+                  >
+                  ⭐ (Cơ bản)
+                </span>
+                <span
+                  class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 text-xs font-bold"
+                >
+                  <span class="material-symbols-outlined text-sm">bolt</span>
+                  +50 XP
+                </span>
+              </div>
+            </div>
+            <button
+              class="mt-4 flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-semibold transition-colors hover:bg-primary/90"
+            >
+              Bắt đầu
+            </button>
+          </div>
+          <div
+            class="w-24 h-24 bg-primary/10 rounded-xl flex items-center justify-center shrink-0"
+          >
+            <div
+              class="w-full h-full bg-cover bg-center rounded-xl"
+              data-alt="Hình minh họa bài học cơ bản trừu tượng"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuA1hUNgi0nSwXZAXoXuXaI2IoKLEfjZXLfNQ57INHbQyUcKOHdHjlPp70_uLdeMp7slWKhwUDT0Qb8-_gKpDcA6YKsoODyBuNXHTuTOp3tcZ6q4LNEN9xS5j6vlegUSRqMxBO3wvOxooYErPGe4BBUeE4Rb-fyCMNZ72MCHeKjSQhqjsmJHKKJmT2UnCr5AHnl5o1-PwGUB5NMT_2FOR-E0fTsdVL41Ol32dx5Ca1aneQh4R8mhs6BgPGAFAq4nsCHQtMPtEV6e4FM&quot;);
+              "
+            ></div>
+          </div>
+        </div>
+        <!-- Question Card 2 -->
+        <div
+          class="flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-primary/5"
+        >
+          <div class="flex flex-[2_2_0px] flex-col justify-between">
+            <div class="flex flex-col gap-1">
+              <p class="text-slate-900 dark:text-slate-100 text-base font-bold">
+                Thực hành từ vựng
+              </p>
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+                <span
+                  class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs font-medium"
+                >
+                  <span class="material-symbols-outlined text-sm">quiz</span> 15
+                  câu hỏi
+                </span>
+                <span
+                  class="flex items-center gap-0.5 text-yellow-500 text-xs font-medium"
+                >
+                  <span
+                    class="material-symbols-outlined material-symbols-fill text-sm"
+                    >star</span
+                  >
+                  ⭐ (Cơ bản)
+                </span>
+                <span
+                  class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 text-xs font-bold"
+                >
+                  <span class="material-symbols-outlined text-sm">bolt</span>
+                  +75 XP
+                </span>
+              </div>
+            </div>
+            <button
+              class="mt-4 flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary text-white text-sm font-semibold"
+            >
+              Bắt đầu
+            </button>
+          </div>
+          <div
+            class="w-24 h-24 bg-primary/10 rounded-xl flex items-center justify-center shrink-0"
+          >
+            <div
+              class="w-full h-full bg-cover bg-center rounded-xl"
+              data-alt="Hình minh họa từ vựng ngôn ngữ"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD6rr26dkPU6rBAhJszMsPvoXlixSIX9Xd5422EYUj0oCR2u6zdLDDxvc9GFlgsPC2_vevcOTunJKCwW7IKjlCnecOL8j77CumDPzayPp8o46nY-MlP7dPVKkhOQhHIPCom6zYOjjjzUPj0kopNGw6hW8ijfnVk0OQ7EXvovZZwyTDG9ajgvXqhaMwBGeDBMv5Rc2HoipMXWIRQJmMrYUvAfyF_oL5uZxB1T4cRnAUhuOCp4LtaJnxh1FdzeNerqDxI6cKGjpac2C8&quot;);
+              "
+            ></div>
+          </div>
+        </div>
+        <!-- Question Card 3 -->
+        <div
+          class="flex items-stretch justify-between gap-4 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-sm border border-primary/5 opacity-80"
+        >
+          <div class="flex flex-[2_2_0px] flex-col justify-between">
+            <div class="flex flex-col gap-1">
+              <p class="text-slate-900 dark:text-slate-100 text-base font-bold">
+                Ngữ pháp nhập môn
+              </p>
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1">
+                <span
+                  class="flex items-center gap-1 text-slate-500 dark:text-slate-400 text-xs font-medium"
+                >
+                  <span class="material-symbols-outlined text-sm">quiz</span> 12
+                  câu hỏi
+                </span>
+                <span
+                  class="flex items-center gap-0.5 text-yellow-500 text-xs font-medium"
+                >
+                  <span
+                    class="material-symbols-outlined material-symbols-fill text-sm"
+                    >star</span
+                  >
+                  ⭐ (Cơ bản)
+                </span>
+                <span
+                  class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 text-xs font-bold"
+                >
+                  <span class="material-symbols-outlined text-sm">bolt</span>
+                  +60 XP
+                </span>
+              </div>
+            </div>
+            <button
+              class="mt-4 flex min-w-[100px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-sm font-semibold"
+            >
+              Tiếp tục
+            </button>
+          </div>
+          <div
+            class="w-24 h-24 bg-primary/10 rounded-xl flex items-center justify-center shrink-0"
+          >
+            <div
+              class="w-full h-full bg-cover bg-center rounded-xl"
+              data-alt="Hình minh họa cấu trúc ngữ pháp"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBfK41f32blhXGAD0IJ6-kWowpHKglbsmDr31qP7JEC3lPKz-mzE-FKKBFy0VyyEm1qQ86bJjk7QhuKqcNGfUSlgbCYGdWzlSHoz_xIejNGGONlFUhLMXOU6lAae8gxxvbqDBEptA0muTk5QoOpV2-nSfINN2aHvW1Cw0VhKHtCbP1nkgB_0-AAVtEeyOEgZ5UTHc5ES4CzkAhg5hGrQwr2HVoH7BcOe1de_MR7XcOmWwvOhoXldZlGvQBOejwEGEHp749QMw94xjc&quot;);
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Navigation Bar -->
+      <div
+        class="border-t border-primary/10 bg-white dark:bg-background-dark px-4 pb-6 pt-2 sticky bottom-0 w-full"
+      >
+        <div class="flex gap-2">
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-primary"
+            href="#"
+          >
+            <div class="flex h-8 items-center justify-center">
+              <span class="material-symbols-outlined material-symbols-fill"
+                >book_2</span
+              >
+            </div>
+            <p class="text-[10px] font-bold uppercase tracking-wider">Học</p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+            href="#"
+          >
+            <div class="flex h-8 items-center justify-center">
+              <span class="material-symbols-outlined">leaderboard</span>
+            </div>
+            <p class="text-[10px] font-medium uppercase tracking-wider">
+              Xếp hạng
+            </p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+            href="#"
+          >
+            <div class="flex h-8 items-center justify-center">
+              <span class="material-symbols-outlined">shopping_bag</span>
+            </div>
+            <p class="text-[10px] font-medium uppercase tracking-wider">
+              Cửa hàng
+            </p>
+          </a>
+          <a
+            class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500"
+            href="#"
+          >
+            <div class="flex h-8 items-center justify-center">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <p class="text-[10px] font-medium uppercase tracking-wider">
+              Hồ sơ
+            </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
