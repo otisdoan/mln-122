@@ -72,7 +72,7 @@ class LessonDetailScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: const Text(
-                        'KINH TẾ CHÍNH TRỊ',
+                        'BÀI HỌC',
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,

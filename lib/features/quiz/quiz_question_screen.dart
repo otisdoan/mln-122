@@ -4,6 +4,7 @@ import '../../core/theme/app_colors.dart';
 import '../../models/quiz_question.dart';
 import '../../services/auth_service.dart';
 import '../../services/quiz_service.dart';
+import '../../services/user_service.dart';
 import '../../widgets/quiz_option_button.dart';
 import 'quiz_result_screen.dart';
 
@@ -96,7 +97,7 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
     });
   }
 
-  void _nextQuestion() {
+  Future<void> _nextQuestion() async {
     if (_currentIndex < _questions.length - 1) {
       setState(() {
         _currentIndex++;
@@ -107,13 +108,18 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
       _stopwatch.stop();
       final userId = AuthService.currentUser?.id;
       if (userId != null) {
-        QuizService.saveResult(
+        await QuizService.saveResult(
           userId: userId,
           score: _score,
           totalQuestions: _questions.length,
           timeTakenSeconds: _stopwatch.elapsed.inSeconds,
           setId: widget.setId,
         );
+        // Cộng EXP thật vào profile: mỗi câu đúng = 5 XP
+        final xpGained = _score * 5;
+        if (xpGained > 0) {
+          await UserService.addXp(userId, xpGained);
+        }
       }
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
@@ -155,11 +161,7 @@ class _QuizQuestionScreenState extends State<QuizQuestionScreen> {
         ),
         title: Column(
           children: [
-            const Text('Kinh tế Chính trị'),
-            Text(
-              'Chương 3: Giá trị thặng dư',
-              style: TextStyle(fontSize: 12, color: AppColors.textSecondary),
-            ),
+            const Text('Trắc nghiệm'),
           ],
         ),
         actions: [

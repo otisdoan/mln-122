@@ -59,18 +59,12 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> _loginWithGoogle() async {
     setState(() => _isLoading = true);
     try {
-      final response = await AuthService.signInWithGoogle();
-      if (response.session == null) {
-        if (mounted) _showError('Đăng nhập Google thất bại');
-        return;
-      }
-      if (mounted) {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const MainNavigation()),
-        );
+      final success = await AuthService.signInWithGoogle();
+      if (!success && mounted) {
+        _showError('Không thể mở màn hình đăng nhập');
       }
     } catch (e) {
-      if (mounted) _showError(e.toString().replaceFirst('Exception: ', ''));
+      if (mounted) _showError('Đăng nhập Google thất bại');
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
