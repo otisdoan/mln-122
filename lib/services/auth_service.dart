@@ -91,8 +91,15 @@ class AuthService {
       nonce: hashedNonce,
     );
 
+    // Thử xóa session cũ nếu có (bỏ qua biệt lệ) để fix Account reauth failed
+    try {
+      await GoogleSignIn.instance.signOut();
+    } catch (_) {}
+
     final googleUser = await GoogleSignIn.instance.authenticate();
-    final idToken = googleUser.authentication.idToken;
+    
+    final googleAuth = await googleUser.authentication;
+    final idToken = googleAuth.idToken;
 
     if (idToken == null) {
       throw Exception('Không lấy được Google ID token');
